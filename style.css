@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital@1&family=Poppins:ital@0;1&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+}
+
+header .brand img {
+    display: block;
+    width: 120px; /* Adjust the width as needed */
+    height: 120px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make it circular */
+}
+
+/* If you want to add some spacing around the logo, you can do the following */
+header .brand {
+    margin-right: 20px; /* Adjust the margin as needed */
+    margin-top: 20px;
+}
+
+/* Ensure the text is hidden */
+header .brand span {
+    display: none;
+}
+
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before{
+    width: 100%;
+    background: ##4872AB;
+}
+
+section{
+    padding: 100px 200px;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: aqua;
+    margin-bottom: 90px; 
+}
+
+.home:before{
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: rgba(251, 3, 3, 0.034);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home .content{
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+}
+.home .content.active{
+    display: block;
+}
+
+.home .content h1{
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+
+.home .content h1 span{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.home .content p{
+    margin-bottom: 65px;
+}
+
+.home .content a{
+    background: #fff;
+    padding: 15px 35px;
+    color: aqua;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.home .content a:hover{
+    background: aqua;
+    color: #fff;
+}
+
+.home .media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.home .media-icons a{
+    color: #fff;
+    font-size: 1.6em;
+    transition: 0.3s ease;
+}
+
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.home .media-icons a:hover{
+    transform: scale(1.3);
+    color: aqua;
+}
+
+.home img{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active{
+    background: aqua;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+
+.img-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.img-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+@media (max-width: 1040px){
+    header{
+        padding: 12px 20px;
+    }
+
+    section{
+        padding: 100px 20px;
+    }
+
+    .home .media-icons{
+        right: 15px;
+    }
+
+    header .navigation{
+        display: none;
+    }
+
+    header .navigation.active{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0);
+    }
+
+    header .navigation .navigation-items a{
+        color: #222;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+
+    header .navigation .navigation-items{
+        background: #fff;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1/ 20%);
+    }
+
+    .img > top-section-img{
+        width: 100vw;
+    }
+}
+
+/*ABOOUT*/
+.intro{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #4872AB;
+}
+.intro img{
+    height: auto;
+    width: 500px;
+}
+.intro-text{
+    width: 550px;
+    text-align: center;
+}
+.main{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.intro-text h2{
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.intro-text h5{
+    color: white;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+.intro-text p{
+    color: rgb(232, 172, 69);
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+.video{
+    margin-left: auto;
+    margin-right: 0;
+}
+/*Testimonial*/
+
+.testimonials {
+    padding: 100px 0;
+    background-color: #4872AB; /* Set the background color to aqua */
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.testimonial {
+    text-align: center;
+    margin-right: 30px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.testimonial p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.testimonial h5 {
+    font-size: 16px;
+    color: #666;
+}
+
+.testimonial-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    cursor: pointer;
+}
+
+#prev,
+#next {
+    width: 30px;
+    height: 30px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+.star {
+    color: #fdd835; /* Change this to the desired color */
+    font-size: 20px; /* Adjust the font size as needed */
+    margin: 0 2px;
+}
+
+/*CREDITS*/
+.credits {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.credits-contacts,
+.contacts-bar,
+.all-rights-reserved {
+    margin-bottom: 10px;
+}
+
+.credits a {
+    color: aqua;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+.credits {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.credits a {
+    color: aqua;
+    text-decoration: none;
+    position: relative;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+.fiery-text {
+    color: #f00; /* Set the initial text color to red or any other color you prefer */
+    animation: fireAnimation 1s infinite alternate; /* Set up a simple fire animation */
+}
+
+@keyframes fireAnimation {
+    from {
+        color: #f00; /* Start with red color */
+        text-shadow: 0 0 5px #f00, 0 0 10px #ff0, 0 0 15px #f00; /* Add a fiery text-shadow */
+    }
+    to {
+        color: #ff0; /* End with yellow color */
+        text-shadow: 0 0 5px #ff0, 0 0 10px #f00, 0 0 15px #ff0; /* Alter the text-shadow */
+    }
+}
+
+
+/*FAQ*/
+.faq-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.faq-btn {
+    background-color: #1bcc14;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.faq-content {
+    display: none;
+    padding: 20px;
+}
+
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.faq-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    cursor: pointer;
+}
+
+
